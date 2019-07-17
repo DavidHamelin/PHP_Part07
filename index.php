@@ -47,6 +47,7 @@
 
         <!-- Ex 05 -->
         <?php
+        // Ex 06
             if ((isset($_POST['lastname']) === false) 
             || (isset($_POST['firstname']) === false) 
             || (isset($_POST['gender']) === false))
@@ -93,7 +94,7 @@
             . htmlspecialchars($_POST['firstname']) . ' ' 
             . htmlspecialchars($_POST['lastname']) . ' ! </h4>';
         }
-        
+        // Ex 07
         // Testons si le fichier a bien été envoyé et s'il n'y a pas d'erreur
         if (isset($_FILES['monfichier']) AND $_FILES['monfichier']['error'] == 0)
         {
@@ -103,7 +104,7 @@
                         // Testons si l'extension est autorisée
                         $infosfichier = pathinfo($_FILES['monfichier']['name']);
                         $extension_upload = $infosfichier['extension'];
-                        $extensions_autorisees = array('jpg', 'jpeg', 'gif', 'png', 'pdf');
+                        $extensions_autorisees = array('jpg', 'jpeg', 'gif', 'png', 'pdf'); // Ex 08
                         if (in_array($extension_upload, $extensions_autorisees))
                         {
                                 // On peut valider le fichier et le stocker définitivement
